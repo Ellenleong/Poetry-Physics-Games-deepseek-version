@@ -236,7 +236,7 @@ function PhysicsPoetryGame() {
             }]);
 
         } catch (error) {
-            alert("判定錯誤: " + error.message);
+            alert("判定錯誤: " + (error as any).message);
         } finally {
             setLoading(false);
         }
