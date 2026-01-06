@@ -247,8 +247,9 @@ function PhysicsPoetryGame() {
         csvContent += "玩家,剩餘手牌\n";
         
         for(let i=1; i<=8; i++) {
-            const name = document.getElementById(`p${i}_name`)?.value || "";
-            const cards = document.getElementById(`p${i}_cards`)?.value || "";
+            // 修改後 (加入 as HTMLInputElement)
+            const name = (document.getElementById(`p${i}_name`) as HTMLInputElement)?.value || "";
+            const cards = (document.getElementById(`p${i}_cards`) as HTMLInputElement)?.value || "";
             if(name) csvContent += `${name},${cards}\n`;
         }
 
@@ -294,7 +295,7 @@ function PhysicsPoetryGame() {
                         className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
                     />
 
-                    {poems[poemId] && (
+                    {(poems as any)[poemId] && (
                         <div className="mt-4 p-4 bg-white border-l-4 border-indigo-500 rounded shadow-sm animate-fade-in">
                             <div className="text-xl font-bold text-gray-800 mb-2">{poems[poemId].text}</div>
                             <div className="text-gray-500 text-sm mb-4">— {poems[poemId].source}</div>
@@ -309,7 +310,7 @@ function PhysicsPoetryGame() {
 
                             {showExplanation && (
                                 <div className="mt-4 p-4 bg-blue-50 text-blue-800 rounded-lg text-sm leading-relaxed">
-                                    {explanations[poemId] || "暫無釋義"}
+                                    {(explanations as any)[poemId] || "暫無釋義"}
                                 </div>
                             )}
                         </div>
