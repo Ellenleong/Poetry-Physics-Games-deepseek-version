@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react';
 import { BookOpen, HelpCircle, Send, Download, RefreshCw, CheckCircle, XCircle } from 'lucide-react';
 
