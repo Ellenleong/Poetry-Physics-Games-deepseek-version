@@ -297,8 +297,8 @@ function PhysicsPoetryGame() {
 
                     {(poems as any)[poemId] && (
                         <div className="mt-4 p-4 bg-white border-l-4 border-indigo-500 rounded shadow-sm animate-fade-in">
-                            <div className="text-xl font-bold text-gray-800 mb-2">{poems[poemId].text}</div>
-                            <div className="text-gray-500 text-sm mb-4">— {poems[poemId].source}</div>
+                            <div className="text-xl font-bold text-gray-800 mb-2">{(poems as any)[poemId].text}</div>
+                            <div className="text-gray-500 text-sm mb-4">— {(poems as any)[poemId].source}</div>
                             
                             <button 
                                 onClick={() => setShowExplanation(!showExplanation)}
