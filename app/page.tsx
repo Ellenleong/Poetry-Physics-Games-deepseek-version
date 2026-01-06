@@ -227,7 +227,8 @@ function PhysicsPoetryGame() {
 
             setResult(data);
             setGameRecords(prev => [...prev, {
-                poem: poems[poemId].text,
+                // 使用 idAsNumber 以及類型斷言
+                poem: poems[idAsNumber as keyof typeof poems].text, 
                 card: selectedCard,
                 reasoning: reasoning,
                 pass: data.pass ? "通過" : "失敗",
