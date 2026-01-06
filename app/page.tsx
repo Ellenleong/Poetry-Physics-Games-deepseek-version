@@ -189,7 +189,7 @@ function PhysicsPoetryGame() {
     const [gameRecords, setGameRecords] = useState([]);
     const [showRecordModal, setShowRecordModal] = useState(false);
 
-    const handlePoemChange = (e) => {
+    const handlePoemChange = (e: any) => {
         const id = e.target.value;
         setPoemId(id);
         setShowExplanation(false);
