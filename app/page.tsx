@@ -197,7 +197,12 @@ function PhysicsPoetryGame() {
     };
 
     const handleSubmit = async () => {
-        if (!poems[poemId]) return alert('請選擇有效的詩句編號');
+    // 將 poemId 轉換為數字來作為索引
+    const idAsNumber = parseInt(poemId);
+    // 使用 @ts-ignore 暫時忽略這個特定的索引類型檢查，這是解決此類字典索引問題最快的方法，
+    // 或者更嚴謹的做法是將 poems 定義為 Record<string, ...>，但這裡我們用轉型解決。
+    // 其實最簡單的修復是直接斷言類型：
+    if (!poems[idAsNumber as keyof typeof poems]) return alert('請選擇有效的詩句編號');
         if (!selectedCard) return alert('請選擇物理卡牌');
         if (!reasoning) return alert('請輸入解釋理由');
 
@@ -209,10 +214,11 @@ function PhysicsPoetryGame() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    poemText: poems[poemId].text,
+                    // 使用你剛剛轉換好的 idAsNumber，並同樣加上類型斷言
+                    poem: poems[idAsNumber as keyof typeof poems].text, 
                     card: selectedCard,
-                    reasoning: reasoning
-                })
+                    reasoning
+                }),
             });
 
             const data = await response.json();
