@@ -1,4 +1,4 @@
-'use client'
+'use client'// 觸發重新部署
 
 import React, { useState } from 'react';
 import { BookOpen, HelpCircle, Send, Download, RefreshCw, CheckCircle, XCircle } from 'lucide-react';
