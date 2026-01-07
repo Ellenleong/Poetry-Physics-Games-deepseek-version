@@ -437,6 +437,15 @@ function PhysicsPoetryGame() {
                     </button>
                 </div>
             </div>
+                <footer className="mt-16 text-center space-y-2">
+                    <div className="w-full max-w-xs mx-auto h-px bg-slate-200 mb-6"></div>
+                    <p className="text-slate-400 text-sm">
+                    poetry-physics-games
+                    </p>
+                    <p className="text-slate-500 text-sm font-medium">
+                    Created by <span className="text-purple-600">Ellen</span>
+                    </p>
+                </footer>
 
             {/* 記錄 Modal */}
             {showRecordModal && (
@@ -473,16 +482,6 @@ function PhysicsPoetryGame() {
                             提交記錄並生成 Excel
                         </button>
                     </div>
-                    <footer className="mt-16 text-center space-y-2">
-                        <div className="w-full max-w-xs mx-auto h-px bg-slate-200 mb-6"></div>
-                        <p className="text-slate-400 text-sm">
-                        poetry-physics-games
-                        </p>
-                        <p className="text-slate-500 text-sm font-medium">
-                        Created by <span className="text-purple-600">Ellen</span>
-                        </p>
-                    </footer>
-
                 </div>
             )}
         </div>
